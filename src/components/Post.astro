@@ -1,0 +1,187 @@
+---
+import { type CollectionEntry } from "astro:content";
+import FormattedDate from "./FormattedDate.astro";
+
+type Props = {
+    post: CollectionEntry<"posts">
+}
+
+const { post } = Astro.props
+
+let words = post.body.split(' ').slice(0, 22);
+let shortenedBody = words.join(' ');
+let tripleDot = '...';
+let text = shortenedBody + tripleDot;
+---
+
+<div class="post-card">
+    <div class="title-post">
+        <a href={`/blog/${post.slug}`}>
+            <h2 class="title">
+                {post.data.title}
+            </h2>
+        </a>
+        <p>
+            {post.data.description}
+        </p>
+        <div class="buttons">
+            {post.data.live && (
+                <a href={post.data.live}>
+                    <h2 class="button button-celadon">
+                        Live
+                    </h2>
+                </a>
+            )}
+            {post.data.code && (
+                <a href={post.data.code} class="buttons">
+                    <h2 class="button button-celadon">
+                        Code
+                    </h2>
+                </a>
+            )}
+        </div>
+    </div>
+    <div>
+        <a href={`/blog/${post.slug}`}>
+            <img 
+                src={post.data.image}
+                width={500}
+                height={550}
+                alt={post.data.title}
+            />
+        </a>
+    </div>
+</div>
+
+<style>
+    .post-card {
+        display: flex;
+        align-items: center;
+        max-width: 1100px;
+        width: 100%;
+        min-height: 588px;
+        border-radius: 42px;
+        padding: 4em;
+        gap: 4em;
+        background-position: 10%;
+    }
+
+    .post-card div {
+        flex: 1;
+    }
+
+    .post-card:last-of-type {
+        background-image: url("public/blue-background.png");
+        background-size: cover;
+    }
+
+    .post-card {
+        background-image: url("public/pink-blue-background.png");
+        background-size: cover;
+    }
+
+    .post-card:first-of-type {
+        background-image: url("public/beige-background.png");
+        background-size: cover;
+    }
+    
+    .date {
+        color: var(--gray);
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+    .title {
+        color: var(--black);
+        font-size: 2.6rem;
+        font-weight: 500;
+    }  
+
+    .post-card:hover {
+        transform-origin: top;
+        transition-duration: 0.5s;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .title-post {
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+        align-items: center;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+    a { 
+        color: var(--black);
+        fill: #6F7775;
+    }
+    a:hover {
+        color: var(--gray);
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 1.4rem;
+        fill: var(--gray);
+    }
+
+    .title h2 {
+        font-size: 2.2rem;
+    }
+
+    .title {
+        color: var(--black);
+    }
+
+    .title-date {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1em;
+    }
+
+    .show-more {
+        margin-left: auto;
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: var(--celadon);
+    }
+    
+    p {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: var(--gray);
+        line-height: 18px;
+    }
+
+    img {
+        border-radius: 14px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .post-card:hover {
+        transform-origin: top;
+        transition-duration: 0.5s;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+    .post-card {
+        transition-duration: 0.5s;
+    }
+
+    @media  (max-width: 1200px) {
+        .post-card {
+            flex-direction: column;
+            padding: 6em;
+        }
+    }
+
+</style>

@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Post from "./Post.astro";
+
+type Props = {
+    posts: CollectionEntry<"posts">[]
+}
+const { posts } = Astro.props;
+---
+
+<section>
+    <div class="container">
+        <h2 id="my-projects">My projects</h2>
+        <hr class="thick-hr">
+        <div class="cards-container">
+            {posts.slice(0, 3).map((post) => <Post post={post} />)}
+        </div>
+        <!-- <a class="chevron-link" href="/blog">
+            Starsze
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24"><path fill="currentColor" d="M10 17.75a.74.74 0 0 1-.53-.22a.75.75 0 0 1 0-1.06L13.94 12L9.47 7.53a.75.75 0 0 1 1.06-1.06l5 5a.75.75 0 0 1 0 1.06l-5 5a.74.74 0 0 1-.53.22"/></svg>
+        </a> -->
+    </div>
+</section>
+
+<style>
+    section {   
+        padding: 5em 9em 1em 9em;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3em;
+        margin-block: 7em 8em;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    @media  (max-width: 768px) {
+        section {
+            padding: 5em 2% 1em;
+        }
+    }
+
+</style>

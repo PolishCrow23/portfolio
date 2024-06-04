@@ -1,0 +1,131 @@
+---
+import SocialLinks from "./SocialLinks.astro"
+---
+
+<section class="hero">
+    <div class="flex-container">
+        <div class=flex-item-1>
+            <div>
+                <span class="hero-span">Hello, world! 🌸</span>
+                <h1>I am Iga,<br>Softwarer Developer,<span class="purple-border"></span> <br>3D Artist<span class="purple-border"></span></h1>
+            </div>
+            <a class="mail" href="mailto:igaspodzieja00@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M2 3.5h12a.5.5 0 0 1 .5.5v.572L8 8.286L1.5 4.572V4a.5.5 0 0 1 .5-.5m-.5 2.8V12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5V6.3L8.372 9.8L8 10.014L7.628 9.8zM0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" clip-rule="evenodd"/></svg>
+                <span class="mail">igaspodzieja00@gmail.com</span>
+            </a>
+            <SocialLinks />
+        </div>
+        <div class="flex-item-2">
+                <img src="/me1.jpg">
+        </div>
+    </div>
+</section>
+
+<style>
+    h1 {
+        color: var(--black);
+        font-size: 5.6rem;
+        font-family: 'Fraunces';
+        font-weight: 600;
+        margin-block: 0 1em;
+    }
+
+    .hero {
+        padding: 0 3em;
+    }
+
+    .hero-span {
+        font-size: 3.6rem;
+        color: var(--black);
+        font-family: 'Fraunces';
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.4em;
+    }
+
+    .mail {
+        font-size: 2.4rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        margin-bottom: 0.3em;
+    }
+
+    .flex-container {
+        padding-inline: 1em;
+        background: url(/bk-figma.png);
+        background-size: cover;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 26px;
+        padding-block: 4em 8em;
+        padding-inline: 6em;
+        gap: 2em;
+    }
+
+    .flex-item-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        gap: 0.5em;
+    }
+
+    .flex-item-2 {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .text {
+        background: url(/blue.png);
+        background-size: cover;
+        padding: 10em 10em;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 24px;
+    }
+
+    .purple-border {
+        color: white;
+        border: 1px solid var(--blue);
+        border-radius: 11px;
+        background: var(--blue);
+        padding: 0.2em;
+        font-size: 3.4rem;
+        font-family: 'Mulish';
+    }
+
+@media  (max-width: 900px) {
+    .flex-container {
+        flex-direction: column;
+        gap: 5em;
+        padding-inline: 3%;
+    }
+    h1 {
+        font-size: calc(2vw + 3rem);
+        text-align: center;
+    }
+    .hero-span {
+        font-size: calc(2vw + 1.5rem);
+        text-align: center;
+    }
+    .mail {
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        padding-inline: 2%;
+    }
+
+    .flex-item-2 {
+        justify-content: center;
+    }
+
+    img {
+        width: 340px;
+    }
+    }

@@ -1,0 +1,28 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import "../styles/slotwrapper.css"
+
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+        <BaseHead />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <div class = "post">
+                <div class = "title">
+                    <h1>{frontmatter.title}</h1>
+                    <hr>
+                </div>
+                <div class="slot-wrapper">
+                    <slot />
+                </div>
+            </div>
+        </main>
+        <Footer />
+    </body>

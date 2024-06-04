@@ -1,0 +1,188 @@
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Amatic SC';
+	src: url('/fonts/AmaticSC-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Sans Condensed';
+	src: url('/fonts/OpenSans-CondLight.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+    --celadon: #14AAA1;
+    --gray: #6F7775;
+    --black: #263435;
+    --purple: #7f8efe;
+}
+
+html { 
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+} 
+   
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial';
+    font-weight: 300;
+}
+
+.chevron-link {
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: var(--celadon);
+    display: block;
+    text-align: right;
+}
+
+
+h2 {
+    font-size: 2.4rem;
+}
+
+ul {
+    list-style: none;
+}
+
+h2, h3, li, label {
+    color: var(--black);
+}
+
+p {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+img {
+    width: 100%;
+}
+
+svg {
+    vertical-align: middle;
+    }
+
+.button svg {
+    vertical-align: middle;
+    margin-left: 5px;
+    }
+
+.thick-hr {
+    border-top: 7px solid #ff6dc6;
+    width: 65px;
+}
+
+span {
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    transition-duration: 0.3s;
+    font-weight: 400;
+    color: #7f8efe;
+}
+
+a:hover {
+    color: var(--gray);
+    transition-duration: 0.2s;
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid #14aaa1;
+    width: 27px;
+    margin-bottom: 1.5em;
+}
+
+.button {
+    display: inline-block;
+    padding-block: 15px;
+    width: 193px;
+
+    border: 1.5px solid var(--purple);
+    border-radius: 8px;
+
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Roboto';
+}
+
+.button-celadon {
+    background-color: var(--purple);
+    color: white;
+}
+
+.button-celadon:hover {
+    background-color: transparent;
+    color: var(--purple);
+}
+
+.button-light {
+    background-color: white;
+    color: var(--celadon)
+}
+
+.button-light:hover {
+    background-color: var(--celadon);
+    color: white;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+
+
+    @media  (max-width: 468px) {
+        .button {
+            width: 50%;
+            gap: 10px;
+        }
+
+        main {
+            padding-inline: 2%;
+        }
+    }
+

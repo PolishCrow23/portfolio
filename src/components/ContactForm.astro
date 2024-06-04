@@ -1,0 +1,150 @@
+<section class="flex-container">
+    <div class="contact-form">
+    </p>
+        <div class="feedback-form">
+
+            <form method="POST" id="form">
+
+                <input type="hidden" name="access_key" value="9ec0edb2-021c-47fa-b597-33696ed222e7">
+                <input type="hidden" name="from_name" value="Formularz kontaktowy ze strony internetowej">
+                <label for="name" "text">Your name:</label>
+                <input type="text" name="name" id="name" required>
+                <label for="email">Your e-mail:</label>
+                <input type="email" name="email" id="email" required>
+                <label for="message">Message:</label>
+                <textarea name="message" required></textarea>
+
+                <div class="h-captcha"
+                data-captcha="true"
+                data-lang="pl">
+                </div>
+
+                <button type="submit" class="button button-celadon">Send</button>
+                <div id="result"></div>
+            </form>
+        
+        </div>
+    </div>
+    <div>
+        <h2>Connect with me! 🌸</h2>
+        <ul>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 2048 2048"><path fill="currentColor" d="M1024 640q79 0 149 30t122 82t83 123t30 149q0 80-30 149t-82 122t-123 83t-149 30q-80 0-149-30t-122-82t-83-122t-30-150q0-79 30-149t82-122t122-83t150-30"/></svg> Collaborating on a fun project</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 2048 2048"><path fill="currentColor" d="M1024 640q79 0 149 30t122 82t83 123t30 149q0 80-30 149t-82 122t-123 83t-149 30q-80 0-149-30t-122-82t-83-122t-30-150q0-79 30-149t82-122t122-83t150-30"/></svg> Volunteering for local non-profits</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 2048 2048"><path fill="currentColor" d="M1024 640q79 0 149 30t122 82t83 123t30 149q0 80-30 149t-82 122t-123 83t-149 30q-80 0-149-30t-122-82t-83-122t-30-150q0-79 30-149t82-122t122-83t150-30"/></svg> Building websites for small businesses</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 2048 2048"><path fill="currentColor" d="M1024 640q79 0 149 30t122 82t83 123t30 149q0 80-30 149t-82 122t-123 83t-149 30q-80 0-149-30t-122-82t-83-122t-30-150q0-79 30-149t82-122t122-83t150-30"/></svg> Coffee chats</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 2048 2048"><path fill="currentColor" d="M1024 640q79 0 149 30t122 82t83 123t30 149q0 80-30 149t-82 122t-123 83t-149 30q-80 0-149-30t-122-82t-83-122t-30-150q0-79 30-149t82-122t122-83t150-30"/></svg> Other exciting opportunities</li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        background-color: #fafff1;
+        padding: 6em 5em;
+        gap: 2em;
+        margin: 0 auto;
+    }
+
+    .contact-form {
+    max-width: 460px;
+    width: 100%;
+
+    }
+
+    label {
+        display: block;
+        font-size: 1.6rem;
+        margin-block: 0.4em;
+    }
+
+    button {
+        display: block;
+        margin-inline: auto;
+        margin-top: 2em;
+    }
+
+    input, textarea {
+        width: 100%;
+        border: 1px solid var(--gray);
+        border-radius: 2px;
+        background-color: rgb(254, 255, 251);
+    }
+
+    input {
+        height: 30px;
+    }
+
+    textarea {
+        height: 200px;
+    }
+    h2 {
+        font-size: 3.2rem;
+        margin-bottom:1em;
+        text-align: center;
+    }
+    
+    .h-captcha {
+        margin-top: 0.6em;
+    }
+
+    #result {
+        font-size: 1.6rem;
+    }
+
+    li {
+    font-size: 1.8rem;
+    margin: 1em;    
+    }
+
+    @media  (max-width: 768px) {
+        .flex-container {
+            flex-direction: column;
+            gap: 5em;
+        }
+    }
+</style>
+
+<script>
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
+    
+    form.addEventListener('submit', function(e) {
+        const formData = new FormData(form);
+        e.preventDefault();
+    
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+    
+        result.innerHTML = "Proszę czekać..."
+    
+        fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.innerHTML = "Formularz został wysłany!";
+                } else {
+                    console.log(response);
+                    result.innerHTML = json.message;
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                result.innerHTML = "Something went wrong!";
+            })
+            .then(function() {
+                form.reset();
+                setTimeout(() => {
+                    result.style.display = "none";
+                }, 10000);
+            });
+    });
+    </script>

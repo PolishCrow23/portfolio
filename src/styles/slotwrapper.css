@@ -1,0 +1,51 @@
+a {
+    color: var(--celadon);
+}
+
+a:hover {
+    color: var(--gray);
+}
+
+.slot-wrapper ul {
+    list-style: disc;
+    margin-inline: 1.8rem 0;
+    margin-block: 1.8rem;
+}
+
+.slot-wrapper li {
+    font-size: 1.6rem;
+    margin-block: 0.6em;
+}
+
+.slot-wrapper ul li {  
+    line-height: 1.4; 
+}
+
+.slot-wrapper ol li {
+    line-height: 1.8;
+}
+
+.slot-wrapper h2 {
+    font-size: 2.4rem;
+    margin-block: 1.2em 0.8em;
+}
+
+main {
+    margin-block: 4em 6em;
+    margin-inline: 2%;
+}
+.post {
+    max-width: 720px;
+    margin: 0 auto;
+}
+.title {
+    margin: 0 6em 0 5em;
+}
+.post h1 {
+    text-align: center;
+    font-size: 3.6rem;
+}
+.post hr {
+    width: 100%;
+    margin: 0.5em auto 6em;
+}

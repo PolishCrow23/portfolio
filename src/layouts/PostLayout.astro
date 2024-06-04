@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/slotwrapper.css"
+import FormattedDate from "../components/FormattedDate.astro";
+
+const { title, date } = Astro.props;
+
+---
+
+<html lang="en">
+	<head>
+        <BaseHead />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <div class = "post">
+                <div class = "title">
+                    <h1>{title}</h1>
+                    <h2><FormattedDate date={date}></h2>
+                    <hr>
+                </div>
+                <div class="slot-wrapper">
+                    <slot />
+                </div>
+            </div>
+        </main>
+        <Footer />
+    </body>
+
+<style>
+    /* main {
+        margin-block: 4em 6em;
+        margin-inline: 2%;
+    }
+    .post {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+    .title {
+        margin: 0 6em 0 5em;
+    }
+    .post h1 {
+        text-align: center;
+        font-size: 3.6rem;
+    }
+    .post hr {
+        width: 100%;
+        margin: 0 auto 4em;
+    } */
+    
+</style>
