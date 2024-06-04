@@ -13,8 +13,6 @@ const posts = await getCollection("posts");
 
 <html lang="en">
 	<head>
-		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
@@ -22,16 +20,5 @@ const posts = await getCollection("posts");
 		<BlogHighlight posts={posts} />
 		<ContactForm />
 		<Footer />
-		<script>
-			if (window.netlifyIdentity) {
-			  window.netlifyIdentity.on("init", user => {
-				if (!user) {
-				  window.netlifyIdentity.on("login", () => {
-					document.location.href = "/public/admin/";
-				  });
-				}
-			  });
-			}
-		</script>
 	</body>
 </html>
