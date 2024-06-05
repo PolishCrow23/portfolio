@@ -1,7 +1,7 @@
 ---
-title: Wildlife Rehabilitation Center "Fundacja Akcja dla Dzikich Zwierząt" Website
+title:  Akcja dla Dzikich Zwierząt Wildlife Rehabilitation Center Website
 date: 05.01.2024
-description: Website for "Fundacja Akcja dla Dzikich Zwierząt" – a fond and wildlife rehabilitation center located in Cracow, Poland. Built with Astro. Uses Decap CMS for blog management and Web3Forms for contact form management.
+description: Website for Akcja dla Dzikich Zwierząt – a fond and wildlife rehabilitation center located in Cracow, Poland. Built with Astro. Uses Decap CMS for blog management and Web3Forms for contact form management.
 live: https://akcjadladzikich.org/
 code: https://github.com/PolishCrow23/akcja-dla-dzikich-zwierzat
 image: /akcjadladzikich.org.png

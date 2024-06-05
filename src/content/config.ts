@@ -7,6 +7,7 @@ const postsCollection = defineCollection({
         description: z.string(),
         live: z.string().optional(),
         code: z.string().optional(),
+        visit: z.string().optional(),
         image: z.string(),
     }),
 });

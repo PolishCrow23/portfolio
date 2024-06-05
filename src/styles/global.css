@@ -108,8 +108,9 @@ svg {
     }
 
 .thick-hr {
-    border-top: 7px solid #ff6dc6;
-    width: 65px;
+    border-top: 7px solid #ff6dc7;
+    width: 280px;
+    margin: 0 auto;
 }
 
 span {

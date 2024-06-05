@@ -1,7 +1,8 @@
 ---
-title: 3D Artist in Zenolithic
+title: 3D Artist at ZenoLithic
 date: 04.16.2024
-description: Made 3D printing/game ready models using Blender (and Substance Painter/Aseprite). Modeled, sculpted, textured, rigged and animated models. Collaborated with other 3D/2D artists and programmers.
+description: Made 3D printing/game ready models using Blender (and Substance Painter/Aseprite). Modeled, sculpted, textured, rigged and animated models. Collaborated with 3D/2D artists and programmers.
+visit: https://www.facebook.com/profile.php?id=61559428547107
 image: /collage.png
 ---
 
