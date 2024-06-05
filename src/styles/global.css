@@ -177,9 +177,8 @@ hr {
 
     @media  (max-width: 468px) {
         .button {
-            width: 50%;
-            gap: 10px;
-        }
+            width: 93px; 
+        } 
 
         main {
             padding-inline: 2%;

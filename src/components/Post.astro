@@ -111,7 +111,7 @@ let text = shortenedBody + tripleDot;
 
     .buttons {
         display: flex;
-        flex-wrap: wrap;
+        justify-content: center;
         gap: 1em;
     }
 
@@ -181,6 +181,12 @@ let text = shortenedBody + tripleDot;
         .post-card {
             flex-direction: column;
             padding: 6em;
+        }
+    }
+
+    @media  (max-width: 500px) {
+        .buttons {
+            flex-direction: column;
         }
     }
 
